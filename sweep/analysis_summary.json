@@ -1,0 +1,109 @@
+{
+  "model_scores": {
+    "fmax_mhz": {
+      "Ridge (poly-2)": {
+        "MAE": 3.614711932472344,
+        "MAPE_%": 6.334073617440218
+      },
+      "Random forest": {
+        "MAE": 0.7596444444444658,
+        "MAPE_%": 1.3048168982158592
+      },
+      "Gradient boosting": {
+        "MAE": 0.7816071945578563,
+        "MAPE_%": 1.3695528593309507
+      }
+    },
+    "total_power_w": {
+      "Ridge (poly-2)": {
+        "MAE": 0.0076672742442909425,
+        "MAPE_%": 3.4916960604572016
+      },
+      "Random forest": {
+        "MAE": 0.009913888888888837,
+        "MAPE_%": 4.164322879243641
+      },
+      "Gradient boosting": {
+        "MAE": 0.0023370115922215834,
+        "MAPE_%": 0.9724643855437843
+      }
+    },
+    "luts": {
+      "Ridge (poly-2)": {
+        "MAE": 49.09762853724934,
+        "MAPE_%": 1.5088008481567448
+      },
+      "Random forest": {
+        "MAE": 22.32555555555554,
+        "MAPE_%": 0.6947702532104614
+      },
+      "Gradient boosting": {
+        "MAE": 5.530047055605388,
+        "MAPE_%": 0.16989359947409424
+      }
+    }
+  },
+  "importance": {
+    "fmax_mhz": {
+      "freq_mhz": 1.8773452071470942,
+      "dir_AreaOptimized_high": 0.07880231220911463,
+      "dir_Default": 0.0010179136620195428,
+      "dir_PerformanceOptimized": 0.0005355319298410895
+    },
+    "total_power_w": {
+      "freq_mhz": 1.8610204172162355,
+      "dir_AreaOptimized_high": 0.0502415094440387,
+      "dir_PerformanceOptimized": 0.0001826293929585332,
+      "dir_Default": 3.3787902007857234e-05
+    },
+    "luts": {
+      "freq_mhz": 1.557742052339963,
+      "dir_AreaOptimized_high": 0.41966161827965365,
+      "dir_Default": 0.0,
+      "dir_PerformanceOptimized": 0.0
+    }
+  },
+  "power_model": {
+    "AreaOptimized_high": {
+      "P_static_W": 0.09582891016871868,
+      "k_mW_per_MHz": 1.5140355677154584,
+      "R2": 0.9972398012540293
+    },
+    "Default": {
+      "P_static_W": 0.09080656634746911,
+      "k_mW_per_MHz": 1.776689466484269,
+      "R2": 0.9968124421095887
+    },
+    "PerformanceOptimized": {
+      "P_static_W": 0.09009922480620147,
+      "k_mW_per_MHz": 1.7944186046511632,
+      "R2": 0.9944529951755641
+    }
+  },
+  "recommendations": {
+    "AreaOptimized_high": {
+      "fastest_safe_period_ns": 16.5,
+      "freq_mhz": 60.61,
+      "pred_power_w": 0.2,
+      "pred_energy_per_instr_nJ": 3.3
+    },
+    "Default": {
+      "fastest_safe_period_ns": 20.0,
+      "freq_mhz": 50.0,
+      "pred_power_w": 0.1761,
+      "pred_energy_per_instr_nJ": 3.521
+    },
+    "PerformanceOptimized": {
+      "fastest_safe_period_ns": 17.0,
+      "freq_mhz": 58.82,
+      "pred_power_w": 0.2102,
+      "pred_energy_per_instr_nJ": 3.573
+    }
+  },
+  "pareto": [
+    "p20_Default",
+    "p20_AreaOptimized_high",
+    "p25_Default",
+    "p25_AreaOptimized_high"
+  ]
+}

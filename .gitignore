@@ -1,0 +1,25 @@
+# Python
+.venv/
+__pycache__/
+
+# Vivado scratch
+vivado/
+.Xil/
+*.jou
+*.log
+!sim/*.log
+*.str
+*.pb
+*.backup.*
+clockInfo.txt
+usage_statistics_webtalk.*
+webtalk*
+
+# simulator scratch
+sim/*.out
+/rv64.vcd
+
+# editor / OS
+.vscode/
+*Zone.Identifier
+.DS_Store

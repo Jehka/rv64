@@ -1,0 +1,102 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Sat Oct  3 18:30:48 2026
+| Host         : OSHIO running 64-bit Ubuntu 24.04.5 LTS
+| Command      : report_timing -max_paths 1 -nworst 1 -file /home/oshio/projects/PBL2_rv64/sweep/reports/p8_AreaOptimized_high_critical_path.rpt
+| Design       : rv64_top
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -8.455ns  (required time - arrival time)
+  Source:                 u_pc/pc_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            u_rf/regs_reg[22][57]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            8.000ns  (clk rise@8.000ns - clk rise@0.000ns)
+  Data Path Delay:        16.310ns  (logic 3.933ns (24.114%)  route 12.377ns (75.886%))
+  Logic Levels:           18  (CARRY4=2 LUT2=3 LUT6=7 MUXF7=2 MUXF8=2 RAMD64E=1 RAMS64E=1)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.924ns = ( 8.924 - 8.000 ) 
+    Source Clock Delay      (SCD):    0.973ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=2486, unset)         0.973     0.973    u_pc/clk
+    SLICE_X41Y128        FDRE                                         r  u_pc/pc_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y128        FDRE (Prop_fdre_C_Q)         0.456     1.429 r  u_pc/pc_reg[3]/Q
+                         net (fo=135, routed)         1.542     2.971    u_imem/mem_reg_192_255_18_20/ADDRC1
+    SLICE_X46Y127        RAMD64E (Prop_ramd64e_RADR1_O)
+                                                      0.124     3.095 r  u_imem/mem_reg_192_255_18_20/RAMC/O
+                         net (fo=5, routed)           1.095     4.190    u_imem/mem_reg_192_255_18_20_n_2
+    SLICE_X48Y126        LUT6 (Prop_lut6_I0_O)        0.124     4.314 r  u_imem/instr_out[20]_INST_0/O
+                         net (fo=103, routed)         1.342     5.656    u_rf/mem_reg_0_255_12_12_i_2_0
+    SLICE_X55Y129        LUT6 (Prop_lut6_I4_O)        0.124     5.780 r  u_rf/mem_reg_0_255_3_3_i_9/O
+                         net (fo=1, routed)           0.000     5.780    u_rf/mem_reg_0_255_3_3_i_9_n_0
+    SLICE_X55Y129        MUXF7 (Prop_muxf7_I1_O)      0.245     6.025 r  u_rf/mem_reg_0_255_3_3_i_3/O
+                         net (fo=2, routed)           0.000     6.025    u_rf/mem_reg_0_255_3_3_i_3_n_0
+    SLICE_X55Y129        MUXF8 (Prop_muxf8_I0_O)      0.104     6.129 r  u_rf/alu_out[9]_INST_0_i_27/O
+                         net (fo=1, routed)           1.234     7.363    u_imem/alu_out[3]_INST_0_i_19
+    SLICE_X45Y130        LUT6 (Prop_lut6_I3_O)        0.316     7.679 r  u_imem/alu_out[9]_INST_0_i_15/O
+                         net (fo=247, routed)         0.889     8.569    u_rf/alu_b[3]
+    SLICE_X43Y130        LUT2 (Prop_lut2_I1_O)        0.124     8.693 r  u_rf/alu_out[3]_INST_0_i_19/O
+                         net (fo=1, routed)           0.000     8.693    u_rf/alu_out[3]_INST_0_i_19_n_0
+    SLICE_X43Y130        CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     9.094 r  u_rf/alu_out[3]_INST_0_i_8/CO[3]
+                         net (fo=1, routed)           0.000     9.094    u_rf/alu_out[3]_INST_0_i_8_n_0
+    SLICE_X43Y131        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     9.428 r  u_rf/alu_out[7]_INST_0_i_8/O[1]
+                         net (fo=1, routed)           0.912    10.339    u_rf/u_alu/data1[5]
+    SLICE_X52Y131        LUT6 (Prop_lut6_I3_O)        0.303    10.642 r  u_rf/alu_out[5]_INST_0_i_11/O
+                         net (fo=1, routed)           0.508    11.151    u_imem/alu_out[5]_INST_0_i_1_0
+    SLICE_X51Y130        LUT2 (Prop_lut2_I1_O)        0.124    11.275 f  u_imem/alu_out[5]_INST_0_i_7/O
+                         net (fo=1, routed)           0.154    11.429    u_imem/alu_out[5]_INST_0_i_7_n_0
+    SLICE_X51Y130        LUT6 (Prop_lut6_I5_O)        0.124    11.553 r  u_imem/alu_out[5]_INST_0_i_1/O
+                         net (fo=2, routed)           0.458    12.011    u_imem/alu_out[5]_INST_0_i_1_n_0
+    SLICE_X49Y128        LUT6 (Prop_lut6_I0_O)        0.124    12.135 r  u_imem/alu_out[5]_INST_0/O
+                         net (fo=253, routed)         1.737    13.871    u_dmem/mem_reg_0_255_57_57/A2
+    SLICE_X34Y120        RAMS64E (Prop_rams64e_ADR2_O)
+                                                      0.124    13.995 r  u_dmem/mem_reg_0_255_57_57/RAMS64E_D/O
+                         net (fo=1, routed)           0.000    13.995    u_dmem/mem_reg_0_255_57_57/OD
+    SLICE_X34Y120        MUXF7 (Prop_muxf7_I0_O)      0.241    14.236 r  u_dmem/mem_reg_0_255_57_57/F7.B/O
+                         net (fo=1, routed)           0.000    14.236    u_dmem/mem_reg_0_255_57_57/O0
+    SLICE_X34Y120        MUXF8 (Prop_muxf8_I0_O)      0.098    14.334 r  u_dmem/mem_reg_0_255_57_57/F8/O
+                         net (fo=1, routed)           0.499    14.833    u_dmem/rd0_0[57]
+    SLICE_X35Y120        LUT2 (Prop_lut2_I1_O)        0.319    15.152 r  u_dmem/regs[1][57]_i_2/O
+                         net (fo=1, routed)           0.422    15.574    u_imem/mem_rd[38]
+    SLICE_X37Y120        LUT6 (Prop_lut6_I5_O)        0.124    15.698 r  u_imem/regs[1][57]_i_1/O
+                         net (fo=31, routed)          1.585    17.283    u_rf/D[57]
+    SLICE_X55Y132        FDRE                                         r  u_rf/regs_reg[22][57]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        8.000     8.000 r  
+                                                      0.000     8.000 r  clk (IN)
+                         net (fo=2486, unset)         0.924     8.924    u_rf/clk
+    SLICE_X55Y132        FDRE                                         r  u_rf/regs_reg[22][57]/C
+                         clock pessimism              0.000     8.924    
+                         clock uncertainty           -0.035     8.889    
+    SLICE_X55Y132        FDRE (Setup_fdre_C_D)       -0.061     8.828    u_rf/regs_reg[22][57]
+  -------------------------------------------------------------------
+                         required time                          8.828    
+                         arrival time                         -17.283    
+  -------------------------------------------------------------------
+                         slack                                 -8.455    
+
+
+
+
